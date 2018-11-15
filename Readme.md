@@ -36,7 +36,7 @@ All commands before the first `PLACE` command will be ignored, and all invalid c
 
 Make sure you have node and npm installed on your computer.
 
-Download the repository and then run `npm install` to download all the node modules.
+Clone the repository and then run `npm install` to download all the node modules.
 
 Type `npm run start` to run the application.
 To run the tests type `npm run test`
@@ -48,4 +48,4 @@ If you wish to be able to run and install the application globally, type
   sudo npm i -g
 ```
 
-Then you can just type 'Bus-parker' from anywhere in your terminal to run the application.
+Then you can just type `Bus-parker` from anywhere in your terminal to run the application.
