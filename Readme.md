@@ -36,7 +36,7 @@ Make sure you have node and npm installed on your computer.
 
 Download the repository and then run `npm install` to download all the node modules.
 
-Type `node main.js` to run the application.
+Type `npm run start` to run the application.
 To run the tests type `npm run test`
 
 If you wish to be able to run and install the application globally, type

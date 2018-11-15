@@ -4,6 +4,7 @@
   "description": "Bus parking simulator",
   "main": "main.js",
   "scripts": {
+    "start": "node main.js",
     "test": "mocha ./tests/test.js"
   },
   "keywords": [],
