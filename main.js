@@ -6,8 +6,10 @@ const State = require('./State')
 
 const placeRegex = '^PLACE ([0-4]),([0-4]),(NORTH|SOUTH|EAST|WEST)$'
 
-const contents = fs.readFileSync('commands.txt', 'utf8');
+const contents = fs.readFileSync('commands.txt', 'utf8')
 const commands = contents.split('\n')
+
+processCommands(commands)
 
 function processCommands(commands) {
   return commands.reduce((state, command) => {
