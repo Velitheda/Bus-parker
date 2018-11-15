@@ -28,6 +28,21 @@ class State {
       return oldLocation
     }
   }
+
+  left () {
+    switch (this.direction) {
+      case 'NORTH':
+        return new State(this.x, this.y, 'WEST')
+      case 'EAST':
+        return new State(this.x, this.y, 'NORTH')
+      case 'SOUTH':
+        return new State(this.x, this.y, 'EAST')
+      case 'WEST':
+        return new State(this.x, this.y, 'SOUTH')
+      default:
+        return this
+    }
+  }
 }
 
 module.exports = State

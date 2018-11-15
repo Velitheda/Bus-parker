@@ -25,6 +25,8 @@ function processCommand(command, state) {
     return new State(parseInt(matchedResult[1]), parseInt(matchedResult[2]), matchedResult[3])
   } else if (command === 'MOVE') {
     return state.move()
+  } else if (command === 'LEFT') {
+    return state.left()
   }
   return state
 }

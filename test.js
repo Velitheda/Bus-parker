@@ -86,18 +86,34 @@ describe('Move command near edges', () => {
   })
 })
 
-describe.skip('Left command', () => {
+describe('Left command', () => {
   it('should turn the bus left if it is facing north', () => {
-
+    const commands = ['PLACE 1,1,NORTH', 'LEFT']
+    const state = processCommands(commands)
+    expect(state.x).to.equal(1)
+    expect(state.y).to.equal(1)
+    expect(state.direction).to.equal('WEST')
   })
   it('should turn the bus left if it is facing South', () => {
-
+    const commands = ['PLACE 1,1,SOUTH', 'LEFT']
+    const state = processCommands(commands)
+    expect(state.x).to.equal(1)
+    expect(state.y).to.equal(1)
+    expect(state.direction).to.equal('EAST')
   })
   it('should turn the bus left if it is facing East', () => {
-
+    const commands = ['PLACE 1,1,EAST', 'LEFT']
+    const state = processCommands(commands)
+    expect(state.x).to.equal(1)
+    expect(state.y).to.equal(1)
+    expect(state.direction).to.equal('NORTH')
   })
   it('should turn the bus left if it is facing West', () => {
-
+    const commands = ['PLACE 1,1,WEST', 'LEFT']
+    const state = processCommands(commands)
+    expect(state.x).to.equal(1)
+    expect(state.y).to.equal(1)
+    expect(state.direction).to.equal('SOUTH')
   })
 })
 
@@ -125,7 +141,7 @@ describe.skip('Command ordering', () => {
 
 describe.skip('Invalid command', () => {
   it('should not move the bus if it recives an invalid command', () => {
-    
+
   })
 })
 
