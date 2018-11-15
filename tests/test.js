@@ -134,7 +134,7 @@ describe('Right command', () => {
 
 describe('Command ordering', () => {
   it('should ignore all other commands until it is given the first place command', () => {
-    const state = processCommands(['MOVE', 'RIGHT', 'LEFT', 'PLACE 1,2,EAST'])
+    const state = processCommands(['MOVE', 'RIGHT', 'LEFT', 'REPORT', 'PLACE 1,2,EAST'])
     expect(state.x).to.equal(1)
     expect(state.y).to.equal(2)
     expect(state.direction).to.equal('EAST')

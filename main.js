@@ -12,9 +12,17 @@ const commands = contents.split('\n')
 processCommands(commands)
 
 function processCommands(commands) {
-  return commands.reduce((state, command) => {
+  const commandsAtStartingCommand = dropBeforeFirstPlaceCommand(commands)
+  return commandsAtStartingCommand.reduce((state, command) => {
     return processCommand(command, state)
   }, new State(0, 0, 'NORTH'))
+}
+
+function dropBeforeFirstPlaceCommand(commands) {
+  const firstPlaceCommandIndex = commands.findIndex(command =>
+    command.match(placeRegex)
+  )
+  return commands.slice(firstPlaceCommandIndex)
 }
 
 function processCommand(command, state) {

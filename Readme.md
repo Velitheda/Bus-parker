@@ -30,6 +30,8 @@ This command will print to the console the coordinates and current direction the
 
 A sample `commands.txt` file is provided.
 
+All commands before the first 'PLACE' command will be ignored, and all invalid commands will be ignored too.
+
 ### Running the application.
 
 Make sure you have node and npm installed on your computer.
