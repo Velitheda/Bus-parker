@@ -8,7 +8,7 @@ It takes in a text file called `commands.txt` that is some combination of these 
 
 `PLACE X,Y,F`
 
-X and Y are coordinates to place the bus between (0,0) and (4,4). F is the compass direction the bus is facing, ie "NORTH", "SOUTH", "EAST" or "WEST".
+`X` and `Y` are coordinates to place the bus between (0,0) and (4,4). `F` is the compass direction the bus is facing, ie 'NORTH', 'SOUTH', 'EAST' or 'WEST'.
 
 (0,0) is the southwest corner of the carpark.
 
@@ -30,7 +30,7 @@ This command will print to the console the coordinates and current direction the
 
 A sample `commands.txt` file is provided.
 
-All commands before the first 'PLACE' command will be ignored, and all invalid commands will be ignored too.
+All commands before the first `PLACE` command will be ignored, and all invalid commands will be ignored too.
 
 ### Running the application.
 
