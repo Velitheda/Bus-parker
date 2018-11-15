@@ -2,7 +2,7 @@
 'use strict'
 
 const fs = require('fs')
-const State = require('./State')
+const State = require('./models/State')
 
 const placeRegex = '^PLACE ([0-4]),([0-4]),(NORTH|SOUTH|EAST|WEST)$'
 

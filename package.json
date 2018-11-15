@@ -4,7 +4,7 @@
   "description": "Bus parking simulator",
   "main": "main.js",
   "scripts": {
-    "test": "mocha test.js"
+    "test": "mocha ./tests/test.js"
   },
   "keywords": [],
   "author": "Jasmine Vickery",
