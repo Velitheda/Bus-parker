@@ -1,0 +1,20 @@
+{
+  "name": "Bus-parker",
+  "version": "1.0.0",
+  "description": "Bus parking simulator",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "keywords": [],
+  "author": "Jasmine Vickery",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "fs": "0.0.1-security",
+    "mocha": "^5.2.0",
+  },
+  "bin": {
+    "Bus-parker": "./main.js"
+  }
+}
