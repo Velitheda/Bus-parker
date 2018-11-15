@@ -27,6 +27,8 @@ function processCommand(command, state) {
     return state.move()
   } else if (command === 'LEFT') {
     return state.left()
+  } else if (command === 'RIGHT') {
+    return state.right()
   }
   return state
 }

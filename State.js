@@ -43,6 +43,21 @@ class State {
         return this
     }
   }
+
+  right () {
+    switch (this.direction) {
+      case 'NORTH':
+        return new State(this.x, this.y, 'EAST')
+      case 'EAST':
+        return new State(this.x, this.y, 'SOUTH')
+      case 'SOUTH':
+        return new State(this.x, this.y, 'WEST')
+      case 'WEST':
+        return new State(this.x, this.y, 'NORTH')
+      default:
+        return this
+    }
+  }
 }
 
 module.exports = State

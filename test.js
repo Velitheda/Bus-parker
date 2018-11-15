@@ -118,18 +118,34 @@ describe('Left command', () => {
 })
 
 
-describe.skip('Right command', () => {
+describe('Right command', () => {
   it('should turn the bus right if it is facing north', () => {
-
+    const commands = ['PLACE 1,1,NORTH', 'RIGHT']
+    const state = processCommands(commands)
+    expect(state.x).to.equal(1)
+    expect(state.y).to.equal(1)
+    expect(state.direction).to.equal('EAST')
   })
   it('should turn the bus right if it is facing South', () => {
-
+    const commands = ['PLACE 1,1,SOUTH', 'RIGHT']
+    const state = processCommands(commands)
+    expect(state.x).to.equal(1)
+    expect(state.y).to.equal(1)
+    expect(state.direction).to.equal('WEST')
   })
   it('should turn the bus right if it is facing East', () => {
-
+    const commands = ['PLACE 1,1,EAST', 'RIGHT']
+    const state = processCommands(commands)
+    expect(state.x).to.equal(1)
+    expect(state.y).to.equal(1)
+    expect(state.direction).to.equal('SOUTH')
   })
   it('should turn the bus right if it is facing West', () => {
-
+    const commands = ['PLACE 1,1,WEST', 'RIGHT']
+    const state = processCommands(commands)
+    expect(state.x).to.equal(1)
+    expect(state.y).to.equal(1)
+    expect(state.direction).to.equal('NORTH')
   })
 })
 
