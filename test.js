@@ -2,11 +2,15 @@ const expect = require('chai').expect
 
 const processCommands = require('./main')
 
-describe.skip('Place command', () => {
+describe('Place command', () => {
   it('should place the bus inside the carpark facing the specified direction', () => {
-
+    const commands = ['PLACE 1,2,EAST']
+    const state = processCommands(commands)
+    expect(state.x).to.equal(1)
+    expect(state.y).to.equal(2)
+    expect(state.direction).to.equal('EAST')
   })
-  it('should not place the bus if it would place it outside the carpark', () => {
+  it.skip('should not place the bus if it would place it outside the carpark', () => {
 
   })
 })
