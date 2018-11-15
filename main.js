@@ -23,6 +23,8 @@ function processCommand(command, state) {
   if (command.match(placeRegex)) {
     const matchedResult = command.match(placeRegex)
     return new State(parseInt(matchedResult[1]), parseInt(matchedResult[2]), matchedResult[3])
+  } else if (command === 'MOVE') {
+    return state.move()
   }
   return state
 }

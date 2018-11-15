@@ -19,40 +19,70 @@ describe('Place command', () => {
 
 describe.skip('Report command', () => {
   it('should print where the bus is and what direction it is facing', () => {
-
-  })
-  it('should not place the bus if it would place it outside the carpark', () => {
+    const commands = ['PLACE 1,2,EAST', 'REPORT']
 
   })
 })
 
-describe.skip('Move command', () => {
+describe('Move command', () => {
   it('should move the bus forward if it is facing North', () => {
-
+    const commands = ['PLACE 1,1,NORTH', 'MOVE']
+    const state = processCommands(commands)
+    expect(state.x).to.equal(1)
+    expect(state.y).to.equal(2)
+    expect(state.direction).to.equal('NORTH')
   })
   it('should move the bus forward if it is facing South', () => {
-
+    const commands = ['PLACE 1,1,SOUTH', 'MOVE']
+    const state = processCommands(commands)
+    expect(state.x).to.equal(1)
+    expect(state.y).to.equal(0)
+    expect(state.direction).to.equal('SOUTH')
   })
   it('should move the bus forward if it is facing East', () => {
-
+    const commands = ['PLACE 1,1,EAST', 'MOVE']
+    const state = processCommands(commands)
+    expect(state.x).to.equal(2)
+    expect(state.y).to.equal(1)
+    expect(state.direction).to.equal('EAST')
   })
   it('should move the bus forward if it is facing West', () => {
-
+    const commands = ['PLACE 1,1,WEST', 'MOVE']
+    const state = processCommands(commands)
+    expect(state.x).to.equal(0)
+    expect(state.y).to.equal(1)
+    expect(state.direction).to.equal('WEST')
   })
 })
 
-describe.skip('Move command near edges', () => {
+describe('Move command near edges', () => {
   it('should not move the bus forward if it is next to the left edge of the carpark', () => {
-
+    const commands = ['PLACE 0,1,WEST', 'MOVE']
+    const state = processCommands(commands)
+    expect(state.x).to.equal(0)
+    expect(state.y).to.equal(1)
+    expect(state.direction).to.equal('WEST')
   })
   it('should not move the bus forward if it is next to the right edge of the carpark', () => {
-
+    const commands = ['PLACE 4,1,EAST', 'MOVE']
+    const state = processCommands(commands)
+    expect(state.x).to.equal(4)
+    expect(state.y).to.equal(1)
+    expect(state.direction).to.equal('EAST')
   })
   it('should not move the bus forward if it is next to the top edge of the carpark', () => {
-
+    const commands = ['PLACE 1,4,NORTH', 'MOVE']
+    const state = processCommands(commands)
+    expect(state.x).to.equal(1)
+    expect(state.y).to.equal(4)
+    expect(state.direction).to.equal('NORTH')
   })
   it('should not move the bus forward if it is next to the bottom edge of the carpark', () => {
-
+    const commands = ['PLACE 1,0,SOUTH', 'MOVE']
+    const state = processCommands(commands)
+    expect(state.x).to.equal(1)
+    expect(state.y).to.equal(0)
+    expect(state.direction).to.equal('SOUTH')
   })
 })
 
@@ -95,7 +125,7 @@ describe.skip('Command ordering', () => {
 
 describe.skip('Invalid command', () => {
   it('should not move the bus if it recives an invalid command', () => {
-
+    
   })
 })
 
