@@ -17,10 +17,11 @@ describe('Place command', () => {
   })
 })
 
-describe.skip('Report command', () => {
+describe('Report command', () => {
   it('should print where the bus is and what direction it is facing', () => {
     const commands = ['PLACE 1,2,EAST', 'REPORT']
-
+    const state = processCommands(commands)
+    expect(state.toString()).to.equal('1,2,EAST')
   })
 })
 
@@ -150,8 +151,7 @@ describe('Right command', () => {
 
 describe('Command ordering', () => {
   it('should ignore all other commands until it is given the first place command', () => {
-    // Verify it ignores report command too
-    const commands = ['MOVE','RIGHT','LEFT','PLACE 1,2,EAST']
+    const commands = ['MOVE', 'RIGHT', 'LEFT', 'PLACE 1,2,EAST']
     const state = processCommands(commands)
     expect(state.x).to.equal(1)
     expect(state.y).to.equal(2)
@@ -176,6 +176,5 @@ describe('Series of commands', () => {
     expect(state.x).to.equal(3)
     expect(state.y).to.equal(3)
     expect(state.direction).to.equal('NORTH')
-    // REPORT
   })
 })

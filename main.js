@@ -7,11 +7,7 @@ const State = require('./State')
 const placeRegex = '^PLACE ([0-4]),([0-4]),(NORTH|SOUTH|EAST|WEST)$'
 
 const contents = fs.readFileSync('commands.txt', 'utf8');
-
-console.log('file contents', contents);
-
 const commands = contents.split('\n')
-console.log('commands', commands)
 
 function processCommands(commands) {
   return commands.reduce((state, command) => {
@@ -29,6 +25,9 @@ function processCommand(command, state) {
     return state.left()
   } else if (command === 'RIGHT') {
     return state.right()
+  } else if (command === 'REPORT') {
+    console.log(state.toString())
+    return state
   }
   return state
 }

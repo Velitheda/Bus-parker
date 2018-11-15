@@ -5,7 +5,7 @@ class State {
     this.direction = direction
   }
 
-  move () {
+  move() {
     switch (this.direction) {
       case 'NORTH':
         const newLocation = this.y + 1
@@ -17,11 +17,11 @@ class State {
       case 'WEST':
         return new State(this.validLocation(this.x - 1, this.x), this.y, 'WEST')
       default:
-        null
+        return this
       }
   }
 
-  validLocation (newLocation, oldLocation) {
+  validLocation(newLocation, oldLocation) {
     if (newLocation < 5 && newLocation >= 0) {
       return newLocation
     } else {
@@ -29,7 +29,7 @@ class State {
     }
   }
 
-  left () {
+  left() {
     switch (this.direction) {
       case 'NORTH':
         return new State(this.x, this.y, 'WEST')
@@ -44,7 +44,7 @@ class State {
     }
   }
 
-  right () {
+  right() {
     switch (this.direction) {
       case 'NORTH':
         return new State(this.x, this.y, 'EAST')
@@ -57,6 +57,10 @@ class State {
       default:
         return this
     }
+  }
+
+  toString() {
+    return this.x + ',' + this.y + ',' + this.direction
   }
 }
 
