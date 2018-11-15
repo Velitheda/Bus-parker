@@ -36,14 +36,14 @@ Make sure you have node and npm installed on your computer.
 
 Download the repository and then run `npm install` to download all the node modules.
 
-Type `chmod +x main.js` to make the main file executable.
-
-Then run `Bus-parker` inside the directory to run the application.
+Type `node main.js` to run the application.
+To run the tests type `npm run test`
 
 If you wish to be able to run and install the application globally, type
 ```
+  chmod +x main.js
   sudo npm link
   sudo npm i -g
 ```
 
-To run the tests type `npm run test`
+Then you can just type 'Bus-parker' from anywhere in your terminal to run the application.
