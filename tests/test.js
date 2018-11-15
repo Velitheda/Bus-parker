@@ -1,3 +1,5 @@
+'use strict'
+
 const expect = require('chai').expect
 
 const processCommands = require('../main')
@@ -153,6 +155,15 @@ describe('Invalid command', () => {
     expect(state.x).to.equal(1)
     expect(state.y).to.equal(2)
     expect(state.direction).to.equal('EAST')
+  })
+})
+
+describe('No commands', () => {
+  it('should have the default state if passed no commands', () => {
+    const state = processCommands([])
+    expect(state.x).to.equal(0)
+    expect(state.y).to.equal(0)
+    expect(state.direction).to.equal('NORTH')
   })
 })
 
