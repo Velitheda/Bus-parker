@@ -14,6 +14,12 @@ describe('Place command', () => {
     expect(state.x).to.not.equal(6)
     expect(state.y).to.not.equal(-1)
   })
+  it('should overwrite a previous place command', () => {
+    const state = processCommands(['PLACE 1,1,EAST', 'PLACE 2,2,WEST'])
+    expect(state.x).to.equal(2)
+    expect(state.y).to.equal(2)
+    expect(state.direction).to.equal('WEST')
+  })
 })
 
 describe('Report command', () => {
