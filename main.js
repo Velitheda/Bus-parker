@@ -15,7 +15,7 @@ function processCommands(commands) {
   const commandsAtStartingCommand = dropBeforeFirstPlaceCommand(commands)
   return commandsAtStartingCommand.reduce((state, command) => {
     return processCommand(command, state)
-  }, new State(0, 0, 'NORTH'))
+  }, null)
 }
 
 function dropBeforeFirstPlaceCommand(commands) {

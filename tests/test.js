@@ -11,16 +11,16 @@ describe('Place command', () => {
     expect(state.y).to.equal(2)
     expect(state.direction).to.equal('EAST')
   })
-  it('should not place the bus if it would place it outside the carpark', () => {
-    const state = processCommands(['PLACE 6,-1,EAST'])
-    expect(state.x).to.not.equal(6)
-    expect(state.y).to.not.equal(-1)
-  })
   it('should overwrite a previous place command', () => {
     const state = processCommands(['PLACE 1,1,EAST', 'PLACE 2,2,WEST'])
     expect(state.x).to.equal(2)
     expect(state.y).to.equal(2)
     expect(state.direction).to.equal('WEST')
+  })
+  it('should not place the bus if it would place it outside the carpark', () => {
+    const state = processCommands(['PLACE 1,1,EAST', 'PLACE 6,-1,EAST'])
+    expect(state.x).to.not.equal(6)
+    expect(state.y).to.not.equal(-1)
   })
 })
 
@@ -159,11 +159,9 @@ describe('Invalid command', () => {
 })
 
 describe('No commands', () => {
-  it('should have the default state if passed no commands', () => {
+  it('should have the state be null if passed no commands', () => {
     const state = processCommands([])
-    expect(state.x).to.equal(0)
-    expect(state.y).to.equal(0)
-    expect(state.direction).to.equal('NORTH')
+    expect(state).to.be.null
   })
 })
 
