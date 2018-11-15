@@ -10,8 +10,10 @@ describe('Place command', () => {
     expect(state.y).to.equal(2)
     expect(state.direction).to.equal('EAST')
   })
-  it.skip('should not place the bus if it would place it outside the carpark', () => {
-
+  it('should not place the bus if it would place it outside the carpark', () => {
+    const commands = ['PLACE 6,-1,EAST']
+    const state = processCommands(commands)
+    expect(state.x).to.not.equal(6)
   })
 })
 
