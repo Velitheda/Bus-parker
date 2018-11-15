@@ -2,13 +2,13 @@
 
 This is a very simple command line application that simulates a bus in a carpark written using Node and JavaScript.
 
-The carpark is square and is 5 units wide and long. The bus takes up one unit can can move freely around in the carpark.
+The carpark is square and is 5 units wide and long. The bus takes up one unit and can move freely around in the carpark.
 
 It takes in a text file called `commands.txt` that is some combination of these commands:
 
 `PLACE X,Y,F`
 
-where X and Y are coordinates to place the bus between (0,0) and (4,4). F is the compass direction the bus is facing, ie "NORTH", "SOUTH", "EAST" or "WEST".
+X and Y are coordinates to place the bus between (0,0) and (4,4). F is the compass direction the bus is facing, ie "NORTH", "SOUTH", "EAST" or "WEST".
 
 (0,0) is the southwest corner of the carpark.
 
